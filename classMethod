@@ -1,0 +1,18 @@
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def fromDashedString(cls, dashed_string):
+        name, age = dashed_string.split("-")
+        name = name.capitalize()
+        return cls(name, age)
+    
+    def info(self):
+        print(f"Person: {self.name}, {self.age} years old.")
+
+info = "hasan-23"
+# p = Person("Hasan", 23)
+p = Person.fromDashedString(info)
+p.info()
